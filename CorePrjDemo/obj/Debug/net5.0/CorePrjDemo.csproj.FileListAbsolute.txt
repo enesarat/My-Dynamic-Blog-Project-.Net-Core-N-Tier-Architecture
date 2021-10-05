@@ -157,3 +157,4 @@ C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Blo
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\TopNavbar.cshtml.g.cs
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\LoginRegisterModule.cshtml.g.cs
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\Footer.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Blog\BlogDetails.cshtml.g.cs

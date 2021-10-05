@@ -13,8 +13,14 @@ namespace CorePrjDemo.Controllers
         BlogManager manageBlog = new BlogManager(new EfBlogRepository());
         public IActionResult Index()
         {
-            var listOfBlogs = manageBlog.GetAllEntityItems();
+            var listOfBlogs = manageBlog.GetBlogListWithCategory();
             return View(listOfBlogs);
+        }
+
+        public IActionResult BlogDetails(int id)
+        {
+            var values = manageBlog.GetListAllByFilter(x=>x.BlogID==id);
+            return View(values);
         }
     }
 }
