@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrete
             return blogAccess.GetAllItems();
         }
 
+        public List<Blog> GetBlogListByAuthor(int id)
+        {
+            return blogAccess.GetAllItemsByFilter(x=>x.Author.AuthorID==id);
+        }
+
         public List<Blog> GetBlogListWithCategory()
         {
             return blogAccess.GetListWithCategories();

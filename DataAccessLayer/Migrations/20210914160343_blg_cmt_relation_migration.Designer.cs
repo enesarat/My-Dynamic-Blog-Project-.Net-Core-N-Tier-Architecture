@@ -22,214 +22,214 @@ namespace DataAccessLayer.Migrations
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("EntityLayer.Concrete.About", b =>
-                {
-                    b.Property<int>("AboutID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("AboutID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AboutDetails")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AboutDetails")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AboutDetails2")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AboutDetails2")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AboutImage")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AboutImage")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AboutImage2")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AboutImage2")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AboutMapLocation")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AboutMapLocation")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("AboutStatus")
-                        .HasColumnType("bit");
+                b.Property<bool>("AboutStatus")
+                    .HasColumnType("bit");
 
-                    b.HasKey("AboutID");
+                b.HasKey("AboutID");
 
-                    b.ToTable("Abouts");
-                });
+                b.ToTable("Abouts");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Author", b =>
-                {
-                    b.Property<int>("AuthorID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("AuthorID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AuthorInfo")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AuthorInfo")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AuthorMail")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AuthorMail")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AuthorName")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AuthorName")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AuthorPassword")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AuthorPassword")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("AuthorStatus")
-                        .HasColumnType("bit");
+                b.Property<bool>("AuthorStatus")
+                    .HasColumnType("bit");
 
-                    b.Property<string>("AuthortImage")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("AuthortImage")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AuthorID");
+                b.HasKey("AuthorID");
 
-                    b.ToTable("Authors");
-                });
+                b.ToTable("Authors");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
-                {
-                    b.Property<int>("BlogID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("BlogID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BlogContent")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("BlogContent")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("BlogCreateDate")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("BlogCreateDate")
+                    .HasColumnType("datetime2");
 
-                    b.Property<string>("BlogImage")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("BlogImage")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("BlogStatus")
-                        .HasColumnType("bit");
+                b.Property<bool>("BlogStatus")
+                    .HasColumnType("bit");
 
-                    b.Property<string>("BlogThumbnailImage")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("BlogThumbnailImage")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BlogTitle")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("BlogTitle")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
+                b.Property<int>("CategoryID")
+                    .HasColumnType("int");
 
-                    b.HasKey("BlogID");
+                b.HasKey("BlogID");
 
-                    b.HasIndex("CategoryID");
+                b.HasIndex("CategoryID");
 
-                    b.ToTable("Blogs");
-                });
+                b.ToTable("Blogs");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
-                {
-                    b.Property<int>("CategoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("CategoryID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CategoryDescription")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("CategoryDescription")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryName")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("CategoryName")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("CategoryStatus")
-                        .HasColumnType("bit");
+                b.Property<bool>("CategoryStatus")
+                    .HasColumnType("bit");
 
-                    b.HasKey("CategoryID");
+                b.HasKey("CategoryID");
 
-                    b.ToTable("Categories");
-                });
+                b.ToTable("Categories");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
-                {
-                    b.Property<int>("CommentID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("CommentID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BlogID")
-                        .HasColumnType("int");
+                b.Property<int>("BlogID")
+                    .HasColumnType("int");
 
-                    b.Property<string>("CommentContent")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("CommentContent")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CommentDate")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("CommentDate")
+                    .HasColumnType("datetime2");
 
-                    b.Property<bool>("CommentStatus")
-                        .HasColumnType("bit");
+                b.Property<bool>("CommentStatus")
+                    .HasColumnType("bit");
 
-                    b.Property<string>("CommentTitle")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("CommentTitle")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CommentUserName")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("CommentUserName")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CommentID");
+                b.HasKey("CommentID");
 
-                    b.HasIndex("BlogID");
+                b.HasIndex("BlogID");
 
-                    b.ToTable("Comments");
-                });
+                b.ToTable("Comments");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
-                {
-                    b.Property<int>("ContactID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("ContactID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("ContactDate")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("ContactDate")
+                    .HasColumnType("datetime2");
 
-                    b.Property<string>("ContactMail")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("ContactMail")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContactMessage")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("ContactMessage")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("ContactStatus")
-                        .HasColumnType("bit");
+                b.Property<bool>("ContactStatus")
+                    .HasColumnType("bit");
 
-                    b.Property<string>("ContactSubject")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("ContactSubject")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContactUserName")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("ContactUserName")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ContactID");
+                b.HasKey("ContactID");
 
-                    b.ToTable("Contacts");
-                });
+                b.ToTable("Contacts");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Category", "Category")
-                        .WithMany("Blogs")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            {
+                b.HasOne("EntityLayer.Concrete.Category", "Category")
+                    .WithMany("Blogs")
+                    .HasForeignKey("CategoryID")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
 
-                    b.Navigation("Category");
-                });
+                b.Navigation("Category");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Blog", "Blog")
-                        .WithMany("Comments")
-                        .HasForeignKey("BlogID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            {
+                b.HasOne("EntityLayer.Concrete.Blog", "Blog")
+                    .WithMany("Comments")
+                    .HasForeignKey("BlogID")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
 
-                    b.Navigation("Blog");
-                });
+                b.Navigation("Blog");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
-                {
-                    b.Navigation("Comments");
-                });
+            {
+                b.Navigation("Comments");
+            });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
-                {
-                    b.Navigation("Blogs");
-                });
+            {
+                b.Navigation("Blogs");
+            });
 #pragma warning restore 612, 618
         }
     }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+﻿@model EntityLayer.Concrete.Blog
 @{
     ViewData["Title"] = "BlogDetails";
     Layout = "~/Views/Shared/UserLayout.cshtml";
@@ -11,88 +11,52 @@
         <div class="row">
             <!--left-->
             <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
-                @foreach (var item in Model)
-                {
-                    <div class="blog-grid-top">
-                        <div class="b-grid-top">
-                            <div class="blog_info_left_grid">
-                                <a href="single.html">
-                                    <img src="~/BlogThema/images/b1.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-info-middle">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("MMM dd,yyyy"))
-                                        </a>
-                                    </li>
-                                    <li class="mx-2">
-                                        <a href="#">
-                                            <i class="far fa-thumbs-up"></i> 0 Beğeni
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="far fa-comment"></i> 0 Yorum
-                                        </a>
-                                    </li>
 
-                                </ul>
-                            </div>
+                <div class="blog-grid-top">
+                    <div class="b-grid-top">
+                        <div class="blog_info_left_grid">
+                            <a href="single.html">
+                                <img src="~/BlogThema/images/b1.jpg" class="img-fluid" alt="">
+                            </a>
                         </div>
+                        <div class="blog-info-middle">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-calendar-alt"></i> @(((DateTime)Model.BlogCreateDate).ToString("MMM dd,yyyy"))
+                                    </a>
+                                </li>
+                                <li class="mx-2">
+                                    <a href="#">
+                                        <i class="far fa-thumbs-up"></i> 0 Beğeni
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-comment"></i> 0 Yorum
+                                    </a>
+                                </li>
 
-                        <h3>
-                            <a href="single.html">@item.BlogTitle</a>
-                        </h3>
-                        <p>
-                            @item.BlogContent
-                        </p>
-                        <a href="/Blog/Index" class="btn btn-primary read-m">Blog Listesine Dön</a>
-                    </div>
-                }
-
-
-                <div class="comment-top">
-                    <h4>Comments</h4>
-                    <div class="media">
-                        <img src="~/BlogThema/images/t1.jpg" alt="" class="img-fluid" />
-                        <div class="media-body">
-                            <h5 class="mt-0">Joseph Goh</h5>
-                            <p>
-                                Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
-                                Cras a ornare elit.
-                            </p>
-
-                            <div class="media mt-3">
-                                <a class="d-flex pr-3" href="#">
-                                    <img src="~/BlogThema/images/t2.jpg" alt="" class="img-fluid" />
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="mt-0">Richard Spark</h5>
-                                    <p>
-                                        Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
-                                        Cras a ornare elit.
-                                    </p>
-                                </div>
-                            </div>
+                            </ul>
                         </div>
                     </div>
+                    <input type="hidden" id="BlogIDForComment" value="@Model.BlogID" />
+                    <h3>
+                        <a href="single.html">@Model.BlogTitle</a>
+                    </h3>
+                    <p>
+                        @Model.BlogContent
+                    </p>
+                    <a href="/Blog/Index" class="btn btn-primary read-m">Blog Listesine Dön</a>
                 </div>
-                <div class="comment-top">
-                    <h4>Leave a Comment</h4>
-                    <div class="comment-bottom">
-                        <form action="#" method="post">
-                            <input class="form-control" type="text" name="Name" placeholder="Name" required="">
-                            <input class="form-control" type="email" name="Email" placeholder="Email" required="">
 
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="">
+                @await Component.InvokeAsync("CommentListByBlog", new { id = Model.BlogID })
 
-                            <textarea class="form-control" name="Message" placeholder="Message..." required=""></textarea>
-                            <button type="submit" class="btn btn-primary submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
+                <!--<partial name="~/Views/Comment/CommentListOfBlog.cshtml">   <!-- TOP NAVBAR PARTIAL VIEW by TAGHELPER-->
+                <!-- await Html.PartialAsync("~/Views/Comment/CommentListOfBlog.cshtml") -->  <!-- TOP NAVBAR PARTIAL VIEW by HTMLHELPER-->
+                <partial name="~/Views/Comment/AddComment.cshtml" model="Model.BlogID">
+                <!-- TOP NAVBAR PARTIAL VIEW by TAGHELPER-->
+                @*await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")*@    @*TOP NAVBAR PARTIAL VIEW by HTMLHELPER*@
             </div>
 
             <!--//left-->
@@ -102,73 +66,12 @@
                     <div class="tech-btm">
                         <img src="~/BlogThema/images/banner1.jpg" class="img-fluid" alt="">
                     </div>
-                    <div class="tech-btm">
-                        <h4>Sign up to our newsletter</h4>
-                        <p>Pellentesque dui, non felis. Maecenas male </p>
-                        <form action="#" method="post">
-                            <input type="email" placeholder="Email" required="">
-                            <input type="submit" value="Subscribe">
-                        </form>
+                    @await Html.PartialAsync("~/Views/NewsLetter/SubscribeByMail.cshtml")
 
-                    </div>
-                    <div class="tech-btm">
-                        <h4>Categories</h4>
-                        <ul class="list-group single">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Dapibus ac facilisis in
-                                <span class="badge badge-primary badge-pill">2</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Morbi leo risus
-                                <span class="badge badge-primary badge-pill">1</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tech-btm">
-                        <h4>Top stories of the week</h4>
+                    @await Component.InvokeAsync("CategoryList")
 
-                        <div class="blog-grids row mb-3">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="~/BlogThema/images/1.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
+                    @await Component.InvokeAsync("RecentPostsOfAuthor", new { id = Model.AuthorID })
 
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Jan, 2018
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="blog-grids row mb-3">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="~/BlogThema/images/6.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Feb, 2018
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                     <div class="single-gd my-5 tech-btm">
                         <h4>Our Progress</h4>
                         <div class="progress">
@@ -193,7 +96,7 @@
                         </div>
                     </div>
                     <div class="single-gd tech-btm">
-                        <h4>Recent Post</h4>
+                        <h4>Son Gönderi</h4>
                         <div class="blog-grids">
                             <div class="blog-grid-left">
                                 <a href="single.html">

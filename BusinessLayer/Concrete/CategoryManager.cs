@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,6 +30,11 @@ namespace BusinessLayer.Concrete
         public Category GetEntityById(int id)
         {
             return categoryAccess.GetById(id);
+        }
+
+        public List<Category> GetListAllByFilter(Expression<Func<Category, bool>> filter)
+        {
+            return categoryAccess.GetAllItemsByFilter(filter);
         }
 
         public void InsertEntity(Category entity)

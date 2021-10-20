@@ -18,5 +18,8 @@ namespace EntityLayer.Concrete
         public string AuthorMail { get; set; }
         public string AuthorPassword { get; set; }
         public bool AuthorStatus { get; set; }
+        public int CountryID { get; set; }
+        //public Country Country { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

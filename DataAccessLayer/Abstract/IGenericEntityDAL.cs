@@ -11,6 +11,7 @@ namespace DataAccessLayer.Abstract
     public interface IGenericEntityDAL<T> where T:class,IEntity,new()
     {
         List<T> GetAllItems();
+        List<T> GetAllItemsByFilter(Expression<Func<T, bool>> filter);
         T GetById(int id);
         void Insert(T entity);
         void Delete(T entity);

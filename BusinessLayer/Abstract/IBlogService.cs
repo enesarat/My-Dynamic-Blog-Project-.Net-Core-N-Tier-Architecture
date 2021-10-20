@@ -11,6 +11,7 @@ namespace BusinessLayer.Abstract
     public interface IBlogService : IGenericService<Blog>
     {
         List<Blog> GetBlogListWithCategory();
-        List<Blog> GetListAllByFilter(Expression<Func<Blog, bool>> filter);
+        //List<Blog> GetListAllByFilter(Expression<Func<Blog, bool>> filter);
+        List<Blog> GetBlogListByAuthor(int id);
     }
 }

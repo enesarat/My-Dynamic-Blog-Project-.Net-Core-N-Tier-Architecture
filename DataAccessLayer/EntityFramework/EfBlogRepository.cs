@@ -15,7 +15,7 @@ namespace DataAccessLayer.EntityFramework
     public class EfBlogRepository : GenericRepository<Blog>, IBlogDAL
     {
        
-        public List<Blog> GetAllItemsByFilter(Expression<Func<Blog, bool>> filter)
+        /*public List<Blog> GetAllItemsByFilter(Expression<Func<Blog, bool>> filter)
         {
             using (Context dbContext = new Context())
             {
@@ -30,7 +30,7 @@ namespace DataAccessLayer.EntityFramework
                     return entityList;
                 }
             }
-        }
+        }*/
         public List<Blog> GetListWithCategories()
         {
             using (var c = new Context())

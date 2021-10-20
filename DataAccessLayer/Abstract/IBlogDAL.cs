@@ -11,6 +11,6 @@ namespace DataAccessLayer.Abstract
     public interface IBlogDAL : IGenericEntityDAL<Blog>
     {
         List<Blog> GetListWithCategories();
-        List<Blog> GetAllItemsByFilter(Expression<Func<Blog, bool>> filter);
+        //List<Blog> GetAllItemsByFilter(Expression<Func<Blog, bool>> filter);
     }
 }

@@ -1,0 +1,41 @@
+﻿<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<div class="tech-btm">
+    <h4>Mail Bültenine Abone Ol</h4>
+    <p>Çeşitli konularda gelecek yeni bloglarımızdan mail ile haberdar olun.</p>
+
+    <form action="javascript:void(0)">
+        <p id="status" style="color:orangered"></p>
+        <input type="email" placeholder="Email" id="Mail" required="">
+        <input type="submit" value="Abone Ol" id="submit" onclick="AjaxFormSubmit()">
+    </form>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        function AjaxFormSubmit() {
+            var mailInput = $("#Mail").val();
+            $.ajax({
+                url: '/NewsLetter/SubscribeByMail/',
+                type: 'POST',
+                data: { "mail": mailInput },
+                dataType: 'Json',
+                success: function (control) {
+                    if (control === 1) {
+                        $("#submit").prop("disabled", true);
+                        swal({
+                            title: "Tamamdır!",
+                            text: "Mail bültenimize abone oldun!",
+                            icon: "success",
+                            button: "Devam",
+                        });
+                        $("#submit").val("Abone olundu!");
+                        $("#Mail").remove();
+                        $('#status').remove();
+                    }
+                    else {
+                        $('#status').text("Lütfen bir e-mail adresi giriniz.");
+                    }
+                }
+            });
+        }
+    </script>
+</div>

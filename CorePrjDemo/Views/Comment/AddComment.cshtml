@@ -1,0 +1,56 @@
+﻿
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<div class="comment-top">
+    <h4>Yorum Yap</h4>
+    <div class="comment-bottom">
+        <form action="javascript:void(0)">
+            <p id="status" style="color:yellow"> </p>
+
+            <input class="form-control" type="text" @*name="Name"*@ placeholder="Kullanıcı Adı" id="CommentUserName" required="">
+            <input class="form-control" type="email" @*name="Email"*@ placeholder="Email" id="email" required="">
+
+            <input class="form-control" type="text" @*name="Subject"*@ placeholder="Konu" id="CommentTitle" required="">
+
+            <textarea class="form-control" @*name="Message"*@ placeholder="Yorumunuz..." id="CommentContent" required=""></textarea>
+            <button type="submit" class="btn btn-primary submit" onclick="AjaxFormSubmitForComment()">Yorumu Gönder</button>
+
+        </form>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            function AjaxFormSubmitForComment() {
+                var name_ = $("#CommentUserName").val();
+                var email_ = $("#email").val();
+                var subject_ = $("#CommentTitle").val();
+                var message_ = $("#CommentContent").val();
+                var blog_ = $("#BlogIDForComment").val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Comment/AddComment/',
+                    data: { "name": name_, "email": email_, "subject": subject_, "message": message_, "blog": blog_ },
+                    dataType: 'Json',
+                    success: function (control) {
+                        if (control === 1) {
+                            swal({
+                                title: "Tamamdır!",
+                                text: "Yorumunuz barılı bir şekilde gönderildi!",
+                                icon: "success",
+                                button: "Devam",
+                            });
+                            $("#CommentUserName").val("");
+                            $("#email").val("");
+                            $("#CommentTitle").val("");
+                            $("#CommentContent").val("");
+                            $('#status').remove();
+                        }
+                        else {
+                            $('#status').text("Lütfen yorumunuzu gönderebilmek için tüm alanları doldurun.");
+                        }
+                    }
+                });
+            }
+        </script>
+    </div>
+    
+</div>

@@ -4,6 +4,7 @@ using EntityLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,23 @@ namespace DataAccessLayer.Repositories
             {
                 var entityList = dbContext.Set<T>().ToList();
                 return entityList;
+            }
+        }
+
+        public List<T> GetAllItemsByFilter(Expression<Func<T, bool>> filter)
+        {
+            using (Context dbContext = new Context())
+            {
+                if (filter == null)
+                {
+                    var entityList = dbContext.Set<T>().ToList();
+                    return entityList;
+                }
+                else
+                {
+                    var entityList = dbContext.Set<T>().Where(filter).ToList();
+                    return entityList;
+                }
             }
         }
 

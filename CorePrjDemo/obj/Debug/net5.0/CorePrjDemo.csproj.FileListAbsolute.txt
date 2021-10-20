@@ -158,3 +158,16 @@ C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Sha
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\LoginRegisterModule.cshtml.g.cs
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\Footer.cshtml.g.cs
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Blog\BlogDetails.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Comment\AddComment.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Comment\CommentListOfBlog.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CommentList\Default.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CommentListByBlog\Default.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\CorePrjDemo.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\RecentPostsOfAuthor\Default.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\NewsLetter\SubscribeByMail.cshtml.g.cs

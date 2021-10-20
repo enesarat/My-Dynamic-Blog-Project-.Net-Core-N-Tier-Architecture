@@ -1,0 +1,91 @@
+﻿@model CorePrjDemo.Models.ViewModels.AuthorCountry
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Yazar Kayıt Sayfası</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <!--
+
+    <input type="text" class="form-control" id="validationDefault01"-->
+                            @*asp-for="@Model.Author.AuthorName"*@ <!--name="AuthorName" placeholder="">-->
+                            <label for="validationCustom01">Ad Soyad</label>
+                            @Html.TextBoxFor(x => x.Author.AuthorName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Author.AuthorName, String.Empty, new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <!--
+    <input type="text" class="form-control" id="validationDefault02"-->
+                            @*asp-for="@Model.Author.AuthorMail"*@ <!--name="AuthorMail" placeholder="">-->
+                            <label for="validationCustom02">E-Mail</label>
+                            @Html.TextBoxFor(x => x.Author.AuthorMail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Author.AuthorMail, String.Empty, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <!--
+    <input type="password" class="form-control" id="password1"-->
+                            @*asp-for="@Model.Author.AuthorPassword"*@ <!--name="AuthorPassword" placeholder="">-->
+                            <label for="exampleInputPassword1 mb-2">Şifre</label>
+                            @Html.TextBoxFor(x => x.Author.AuthorPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Author.AuthorPassword, String.Empty, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1 mb-2">Şifre Doğrulama</label>
+                            <input type="password" class="form-control" id="password1" name="AuthorPasswordCheck" placeholder="" required="">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword2 mb-2">Şehir</label>
+                            @*<select name="CountryID"
+                asp-items="@(new SelectList(ViewBag.Countries,"CountryID","CountryName"))">
+            <option>Please select one</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Author.CountryID)*@
+                            @Html.DropDownListFor(m=>m.Author.CountryID, new SelectList(Model.Countries, "CountryID", "CountryName"),"-Bulunduğunuz Ülkeyi Seçiniz",new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Author.CountryID, String.Empty, new { @class = "text-danger" })
+
+                            @*<input type="text" class="form-control" id="password2" name="CountryID" placeholder="" required="">*@
+                        </div>
+                        <div class="form-group col-md-6">
+                            <!--
+    <input type="text" class="form-control" id="imageAuth"-->
+                            @*asp-for="@Model.Author.AuthortImage"*@ <!--name="AuthortImage" placeholder="" required="">-->
+                            <label for="exampleInputPassword2 mb-2">Görsel Dosya Konumu</label>
+                            @Html.TextBoxFor(x => x.Author.AuthortImage, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Author.AuthortImage, String.Empty, new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+                    <p>
+                        <a href="#" id="userAgreement">Kayıt işlemi için, kullanıcı sözleşmesini okudum ve onaylıyorum.</a>
+                    </p>
+                    <script>
+                        //var userAgrr = "Kullanıcı Sözleşmesi:"," \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. ";
+
+                        $('#userAgreement').click(function () {
+                            swal("Kullanıcı Sözleşmesi:", " \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. ");
+                        });
+                    </script>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

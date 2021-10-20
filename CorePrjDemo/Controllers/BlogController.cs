@@ -19,7 +19,7 @@ namespace CorePrjDemo.Controllers
 
         public IActionResult BlogDetails(int id)
         {
-            var values = manageBlog.GetListAllByFilter(x=>x.BlogID==id);
+            var values = manageBlog.GetEntityById(id);
             return View(values);
         }
     }
