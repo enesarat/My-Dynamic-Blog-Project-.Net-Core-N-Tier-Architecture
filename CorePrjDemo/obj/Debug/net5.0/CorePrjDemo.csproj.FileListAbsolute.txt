@@ -171,3 +171,8 @@ C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\CorePrjDemo.Mvc
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\RecentPostsOfAuthor\Default.cshtml.g.cs
 C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\NewsLetter\SubscribeByMail.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\ErrorPage\Status1.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\About\SocialMediaAccounts.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\Enes\Desktop\C#\c#\netCore\CorePrjDemo\obj\Debug\net5.0\Razor\Views\Author\Index.cshtml.g.cs

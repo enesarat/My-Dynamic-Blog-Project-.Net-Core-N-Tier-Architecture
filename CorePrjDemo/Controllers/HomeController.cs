@@ -20,7 +20,7 @@ namespace CorePrjDemo.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index","Blog"); //View();
         }
 
         public IActionResult Privacy()
